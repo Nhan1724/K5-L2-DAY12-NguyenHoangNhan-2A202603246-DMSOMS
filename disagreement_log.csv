@@ -1,0 +1,15 @@
+﻿image,label,field,issue,mine,peer,verdict,guideline_rule,action
+D01.png,hand,side,khác giá trị (IoU=1.00),right,left,mine,"4.4-2, 4.7",Phát sửa thành right. Quy ước trái/phải theo người lái (tay phải vươn về phía vô lăng)
+D01.png,hand,side,khác giá trị (IoU=1.00),left,right,mine,"4.4-2, 4.7",Phát sửa thành left. Tay trái đặt trên đùi theo cơ thể người lái
+D02.png,object,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,peer,4.2,Nhân xóa box object trên D02. Guideline nêu rõ DMS không vẽ object hoặc đồ vật trên tay
+D03.png,phone,box,chỉ có ở peer (hoặc IoU thấp),,,mine,"4.2, 4.7","Phát xóa box phone. Vật cầm tay là cốc giữ nhiệt, không thấy hình dạng điện thoại"
+D04.png,face,eye_left,khác giá trị (IoU=1.00),closed,unknown,peer,"4.4-1, 4.5","Nhân sửa closed thành unknown. 4 điểm mí mắt trái đều occluded=1, không suy đoán"
+D05.png,face,eye_left,khác giá trị (IoU=1.00),open,unknown,peer,"4.4-1, 4.5",Nhân sửa open thành unknown. Mặt nghiêng nghe điện thoại làm khuất mắt (outside=1)
+D05.png,face,eye_right,khác giá trị (IoU=1.00),open,unknown,peer,"4.4-1, 4.5","Nhân sửa open thành unknown. Tương tự mắt trái, góc quay nghiêng che khuất tròng mắt"
+D06.png,object,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,peer,4.2,Nhân xóa box object trên D06 theo quy định DMS không vẽ object
+S02_rgb.png,person,seatbelt,khác giá trị (IoU=1.00),not_worn,worn_correct,mine,"3 (SVIRO), 4.7",Phát sửa worn_correct thành not_worn. Dataset SVIRO không ai thắt dây an toàn
+S03_rgb.png,infant_seat,facing,khác giá trị (IoU=1.00),front,rear,ambiguous,4.8,Hỏi coach và thống nhất giữ front do quai nôi và tựa đầu hướng về phía trước xe
+S05_ir.png,infant_seat,seat,khác giá trị (IoU=1.00),rear_left,rear_right,peer,"4.4-3, 4.8",Nhân sửa rear_left thành rear_right. Camera OMS nhìn ngược về sau nên bên trái ảnh là rear_right
+S06_rgb.png,child_seat,occupied,khác giá trị (IoU=1.00),unknown,no,peer,4.8,Nhân sửa unknown thành no vì lòng ghế trẻ em nhìn thấy rõ hoàn toàn trống
+S06_rgb.png,child_seat,seat,khác giá trị (IoU=1.00),rear_left,rear_right,peer,"4.4-3, 4.8","Nhân sửa rear_left thành rear_right cho box bên trái ảnh, tránh trùng 2 child_seat ở rear_left"
+S07_ir.png,frame_meta,modality,khác giá trị,rgb,ir,peer,4.3-1,Nhân sửa modality từ rgb thành ir cho ảnh S07_ir.png
