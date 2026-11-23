@@ -1,0 +1,15 @@
+File: export_final.zip
+Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=13, face=19, face13=6, hand=12, infant_seat=11, object=12, person=22, phone=1
+  [WARN] D04.png: eye_left=closed nhưng cả 4 điểm left_eye_* đều bị che: không thấy mắt thì eye_left nên là unknown
+  [WARN] D05.png: eye_left=open nhưng cả 4 điểm left_eye_* đều bị che: không thấy mắt thì eye_left nên là unknown
+  [WARN] D05.png: eye_right=open nhưng cả 4 điểm right_eye_* đều bị che: không thấy mắt thì eye_right nên là unknown
+  [WARN] S05_ir.png: ghế rear_left có nhiều box cùng loại: ['infant_seat', 'infant_seat', 'person']
+  [WARN] S06_rgb.png: ghế rear_left có nhiều box cùng loại: ['child_seat', 'child_seat']
+Kết quả: 0 lỗi, 5 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+
+Giải thích các cảnh báo:
+- D04.png [WARN]: Mắt trái tài xế bị tay và vật cầm che khuất mép mí mắt nên 4 điểm left_eye_* đánh cờ occluded=1; ban đầu chọn closed theo phán đoán mí mắt khép, ở lượt review chéo đã thống nhất chuyển thành unknown theo quy tắc 4.4-1 (đã sửa trong export_final_v2.zip).
+- D05.png [WARN eye_left]: Tài xế áp điện thoại nghe máy khiến mặt xoay nghiêng, mắt trái khuất hẳn ra ngoài góc camera (outside=1); ban đầu phỏng đoán open, đã đổi thành unknown theo guideline 4.5 (đã sửa trong export_final_v2.zip).
+- D05.png [WARN eye_right]: Tương tự mắt trái, góc quay nghiêng che khuất tròng mắt phải; ban đầu chọn open do suy diễn, đã sửa thành unknown theo quy tắc 4.4-1 (đã sửa trong export_final_v2.zip).
+- S05_ir.png [WARN]: Camera OMS nhìn ngược về sau nên bên trái ảnh là rear_right; sơ suất ban đầu gán nhầm nôi em bé bên trái ảnh thành rear_left dẫn đến cảnh báo trùng box; đã sửa chuẩn xác thành rear_right trong export_final_v2.zip.
+- S06_rgb.png [WARN]: Tương tự S05_ir, ghế trẻ em bên trái ảnh bị nhầm thuộc tính seat thành rear_left thay vì rear_right; đã chỉnh sửa lại thành rear_right trong export_final_v2.zip.
